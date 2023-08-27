@@ -1,0 +1,150 @@
+.main-header {
+  border-bottom: $main-header-border;
+  max-height: 60px;
+  padding: 16px 0;
+  @include tablet {
+    padding: 21px 0;
+    max-height: 80px;
+  }
+  @include desktop {
+    padding: 24px 0px 25px 15px;
+    max-height: 80px;
+  }
+
+  &__flex-container {
+    display: flex;
+    align-items: baseline;
+  }
+  &__webstudio-link {
+    font-family: $logo-font;
+    color: $header-logo-color;
+    text-decoration: none;
+    font-size: 24px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+
+    &--span {
+      color: $primary-color;
+    }
+
+    @include desktop {
+      font-size: 26px;
+    }
+  }
+  &__menu-button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 22px;
+    right: 34px;
+    &:hover,
+    &:focus {
+      fill: $primary-color;
+    }
+    @include tablet {
+      display: none;
+    }
+    @include desktop {
+      display: none;
+    }
+  }
+}
+.navigation {
+  display: none;
+  @include tablet {
+    display: flex;
+    margin-left: 83px;
+  }
+  @include desktop {
+    display: flex;
+    margin-left: 93px;
+  }
+  &__list {
+    color: $primary-text-color;
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+  }
+  &__item {
+    margin-right: 46px;
+    &:nth-child(3) {
+      margin-right: 0;
+    }
+  }
+
+  &__agency-link,
+  &__agency-link:visited {
+    color: $primary-text-color;
+  }
+  &__agency-link--underline {
+    color: $primary-color;
+    &::after {
+      content: "";
+      background-color: $primary-color;
+      display: block;
+      position: relative;
+      top: 25.5px;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+      @include desktop {
+        top: 23px;
+      }
+    }
+  }
+  &__portfolio-link,
+  &__portfolio-link:visited {
+    color: $primary-text-color;
+  }
+  &__portfolio-link--underline {
+    color: $primary-color;
+    &::after {
+      content: "";
+      background-color: $primary-color;
+      display: block;
+      position: relative;
+      top: 25.5px;
+      width: 100%;
+      height: 4px;
+      border-radius: 2px;
+    }
+  }
+  &__contact-link {
+    color: $primary-text-color;
+    &:visited {
+      color: $primary-text-color;
+    }
+  }
+}
+.contacts {
+  display: none;
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto;
+  }
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-right: 15px;
+  }
+  &__tel-link {
+    color: $secondary-text-color;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+  }
+  &__mail-link {
+    @extend .contacts__tel-link;
+  }
+  &__envelope-icon,
+  &__smartphone-icon {
+    fill: currentColor;
+  }
+}

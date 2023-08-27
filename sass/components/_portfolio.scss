@@ -1,0 +1,132 @@
+.portfolio-buttons {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 94px;
+  margin-bottom: 50px;
+
+  @include tablet {
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  &__button {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    background-color: $portfolio-buttons-color;
+    border: 0;
+    margin: 0 8px 15px 0;
+    padding: 6px 0;
+    width: 120px;
+    &:nth-child(n + 4) {
+      margin: 0;
+    }
+    @include tablet {
+      margin: 0 8px 0 0;
+      &:nth-child(5) {
+        margin: 0;
+      }
+    }
+    &:hover,
+    &:focus {
+      box-shadow: $portfolio-selected-buttons-shadow;
+      color: #fff;
+      background-color: $primary-color;
+    }
+  }
+}
+.portfolio-projects {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include tablet {
+    align-content: flex-start;
+  }
+  &__item {
+    max-height: 404px;
+    margin-bottom: 30px;
+    position: relative;
+    &:hover,
+    &:focus {
+      box-shadow: $portfolio-selected-project-shadow;
+    }
+    &:nth-last-child(1) {
+      margin-bottom: 60px;
+    }
+
+    @include tablet {
+      margin-right: 10px;
+    }
+  }
+  &__img {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 450px;
+    height: 294px;
+
+    @include tablet {
+      width: 350px;
+      height: 278px;
+    }
+  }
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    padding: 0.5em;
+    width: 450px;
+    height: 294px;
+    background-color: $portfolio-overlays-color;
+    transform: translateY(100%);
+    transition: $primary-transitions;
+
+    @include tablet {
+      width: 350px;
+      height: 278px;
+    }
+    & p {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 28px;
+      letter-spacing: 0.03em;
+      color: #fff;
+      padding: 40px 24px;
+
+      @include tablet {
+        padding: 10px 24px;
+      }
+    }
+  }
+  &__section:hover .portfolio-projects__overlay,
+  &__section:focus .portfolio-projects__overlay {
+    transform: translateY(0);
+  }
+  &__texts {
+    border: $portfolio-text-under-project-border;
+    border-top: 0;
+    padding-top: 20px;
+    height: 110px;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    margin-left: 24px;
+    margin-bottom: 4px;
+  }
+  &__category {
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.03em;
+    color: $secondary-text-color;
+    margin-left: 24px;
+    margin-bottom: 20px;
+  }
+}
